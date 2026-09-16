@@ -1,0 +1,31 @@
+name: Ubuntu 22.04 CMake Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show environment
+        run: |
+          lsb_release -ds
+          cmake --version
+          g++ --version
+
+      - name: Configure
+        run: cmake -S . -B build
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test expected output
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Run program
+        run: ./build/hello
