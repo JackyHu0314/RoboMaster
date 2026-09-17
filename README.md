@@ -58,3 +58,5 @@ GitHub Actions 会在 Ubuntu 22.04 上从干净检出状态执行配置、构建
 ## Ubuntu 22.04 构建证据
 
 [查看实际构建与运行日志](https://github.com/JackyHu0314/RoboMaster/actions/runs/35083265854/job/104752040072)，包含 Ubuntu 22.04.5 LTS、构建成功和 `Hello, RoboMaster!` 输出。
+
+<img width="1265" height="712" alt="clipboard" src="https://github.com/user-attachments/assets/6578627e-8cd6-4ba4-ad30-58dd0c0b703d" />
