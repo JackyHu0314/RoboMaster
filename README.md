@@ -23,7 +23,7 @@ sudo apt install -y git cmake build-essential
 ## 获取、构建与运行
 
 ```bash
-git clone <本仓库公开链接>
+git clone https://github.com/JackyHu0314/RoboMaster.git
 cd RoboMaster
 cmake -S . -B build
 cmake --build build
@@ -38,8 +38,6 @@ Hello, RoboMaster!
 
 ## 验证
 
-项目包含 CTest 输出检查：
-
 ```bash
 ctest --test-dir build --output-on-failure
 ```
@@ -51,13 +49,12 @@ GitHub Actions 会在 Ubuntu 22.04 上从干净检出状态执行配置、构建
 ```text
 .
 ├── .github/workflows/build.yml  # Ubuntu 22.04 自动构建验证
-├── images/success.png           # 构建运行成功截图
-├── src/main.cpp                # C++ 程序入口
-├── .gitignore                  # 排除 build/ 等生成物
-├── CMakeLists.txt              # CMake 构建配置
-└── README.md                   # 项目说明
+├── src/main.cpp                 # C++ 程序入口
+├── .gitignore                   # 排除 build/ 等生成物
+├── CMakeLists.txt               # CMake 构建配置
+└── README.md                    # 项目说明
 ```
 
-## 构建成功截图
+## Ubuntu 22.04 构建证据
 
-![Ubuntu 22.04 下构建并运行成功](images/success.png)
+[查看实际构建与运行日志](https://github.com/JackyHu0314/RoboMaster/actions/runs/35083265854/job/104752040072)，包含 Ubuntu 22.04.5 LTS、构建成功和 `Hello, RoboMaster!` 输出。
