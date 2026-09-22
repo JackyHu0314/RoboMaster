@@ -49,7 +49,7 @@ jobs:
           Xvfb :99 -screen 0 1600x1000x24 > /tmp/xvfb.log 2>&1 &
           export DISPLAY=:99
           sleep 2
-          xterm -geometry 118x42+30+20 -fa 'DejaVu Sans Mono' -fs 14 \
+          xterm -geometry 140x50+30+20 -fa 'DejaVu Sans Mono' -fs 10 \
             -title 'Ubuntu 22.04 - RoboMaster CMake Build and Run' \
             -e /tmp/run_homework.sh &
           for _ in {1..120}; do
