@@ -40,9 +40,11 @@ jobs:
           ./build/hello
           echo
           echo 'Build and run completed successfully.'
+          touch /tmp/terminal-screenshot-ready
           sleep 20
           SCRIPT
           chmod +x /tmp/run_homework.sh
+          rm -f /tmp/terminal-screenshot-ready
 
           Xvfb :99 -screen 0 1600x1000x24 > /tmp/xvfb.log 2>&1 &
           export DISPLAY=:99
@@ -50,7 +52,12 @@ jobs:
           xterm -geometry 118x42+30+20 -fa 'DejaVu Sans Mono' -fs 14 \
             -title 'Ubuntu 22.04 - RoboMaster CMake Build and Run' \
             -e /tmp/run_homework.sh &
-          sleep 10
+          for _ in {1..120}; do
+            [[ -f /tmp/terminal-screenshot-ready ]] && break
+            sleep 1
+          done
+          test -f /tmp/terminal-screenshot-ready
+          sleep 1
           import -window root images/success.png
           identify images/success.png
 
