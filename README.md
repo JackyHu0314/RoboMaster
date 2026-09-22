@@ -49,6 +49,7 @@ GitHub Actions 会在 Ubuntu 22.04 上从干净检出状态执行配置、构建
 ```text
 .
 ├── .github/workflows/build.yml  # Ubuntu 22.04 自动构建验证
+├── .github/workflows/terminal-screenshot.yml  # 生成完整终端证据
 ├── images/success.png           # Ubuntu 22.04 构建和运行截图
 ├── src/main.cpp                 # C++ 程序入口
 ├── .gitignore                   # 排除 build/ 等生成物
@@ -58,6 +59,6 @@ GitHub Actions 会在 Ubuntu 22.04 上从干净检出状态执行配置、构建
 
 ## Ubuntu 22.04 构建证据
 
-[查看实际构建与运行日志](https://github.com/JackyHu0314/RoboMaster/actions/runs/35083265854/job/104752040072)，包含 Ubuntu 22.04.5 LTS、构建成功和 `Hello, RoboMaster!` 输出。
+[查看实际构建与运行日志](https://github.com/JackyHu0314/RoboMaster/actions)，截图为 Ubuntu 22.04 中的完整终端窗口，清晰显示系统信息、配置命令、构建命令、`[100%] Built target hello`、运行命令和 `Hello, RoboMaster!` 输出。
 
 ![Ubuntu 22.04 构建与运行成功截图](images/success.png)
